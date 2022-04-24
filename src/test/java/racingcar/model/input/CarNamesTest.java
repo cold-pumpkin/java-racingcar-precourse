@@ -7,6 +7,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 class CarNamesTest {
@@ -38,5 +39,16 @@ class CarNamesTest {
             new CarNames(names);
         }).isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("[ERROR] 중복된 자동차 이름이 존재합니다!");
+    }
+
+    @Test
+    @DisplayName("입력받은 자동차 이름 리스트를 필드 값으로 가진 객체가 정상적으로 생성되는지 확인한다.")
+    void createCarNamesWithInputCarNameListTest() {
+        CarNames carNames = new CarNames(Arrays.asList("kim", "choi", "park"));
+        assertThat(carNames)
+                .isExactlyInstanceOf(CarNames.class)
+                .hasFieldOrProperty("carNames")
+                .hasFieldOrPropertyWithValue("carNames",
+                        Arrays.asList(new CarName("kim"), new CarName("choi"), new CarName("park")));
     }
 }
