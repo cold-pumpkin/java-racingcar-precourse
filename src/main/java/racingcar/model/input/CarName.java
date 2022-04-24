@@ -1,7 +1,8 @@
 package racingcar.model.input;
 
-public class CarName {
+import java.util.Objects;
 
+public class CarName {
     private static final int MIN_LENGTH = 1;
     private static final int MAX_LENGTH = 5;
 
@@ -25,5 +26,19 @@ public class CarName {
 
     public String getName() {
         return name;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj.getClass() != this.getClass())
+            return false;
+        return this.name.equals(((CarName) obj).name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(name);
     }
 }
