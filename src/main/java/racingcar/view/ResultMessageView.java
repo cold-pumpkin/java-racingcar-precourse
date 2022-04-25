@@ -10,7 +10,7 @@ import java.util.List;
 public class ResultMessageView {
     private static final String RESULT_START_MESSAGE = "실행 결과";
     private static final String PROGRESS_BAR = "-";
-    private static final String FINAL_WINNER_MESSAGE = "최종 우승자 : %s";
+    private static final String FINAL_WINNER_MESSAGE = "최종 우승자는 %s 입니다.";
 
     public static void printResultStartMessage() {
         System.out.println(RESULT_START_MESSAGE);
