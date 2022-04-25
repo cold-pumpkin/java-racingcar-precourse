@@ -1,7 +1,6 @@
 package racingcar.model;
 
-import static racingcar.view.ResultMessageView.printRaceProgressStatus;
-import static racingcar.view.ResultMessageView.printResultStartMessage;
+import static racingcar.view.ResultMessageView.*;
 
 public class Race {
     private final Cars cars;
@@ -18,5 +17,9 @@ public class Race {
             cars.move();
             printRaceProgressStatus(cars);
         }
+    }
+
+    public void finish() {
+        printFinalWinnerMessage(new Winner(cars));
     }
 }
