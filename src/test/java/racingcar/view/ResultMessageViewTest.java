@@ -52,7 +52,8 @@ class ResultMessageViewTest extends MessageViewTest {
         printFinalWinnerMessage(winner);
 
         assertThat(output())
-                .contains("최종 우승자 : ")
+                .contains("최종 우승자는")
+                .contains("입니다.")
                 .containsAnyOf("park", "kim", "lee");
     }
 
