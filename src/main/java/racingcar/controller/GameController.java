@@ -1,6 +1,7 @@
 package racingcar.controller;
 
 import racingcar.model.Cars;
+import racingcar.model.Race;
 import racingcar.model.Round;
 import racingcar.model.input.CarNames;
 
@@ -14,6 +15,10 @@ public class GameController {
     public void play() {
         Cars cars = getCarsFromUserInput();
         Round round = getRoundFromUserInput();
+
+        Race race = new Race(cars, round);
+        race.start();
+        race.finish();
     }
 
     private Cars getCarsFromUserInput() {
