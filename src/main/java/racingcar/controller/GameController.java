@@ -9,9 +9,6 @@ import static racingcar.model.GameInputReader.*;
 
 public class GameController {
 
-    public GameController() {
-    }
-
     public void play() {
         Cars cars = getCarsFromUserInput();
         Round round = getRoundFromUserInput();
